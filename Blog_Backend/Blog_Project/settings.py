@@ -15,6 +15,7 @@ from pathlib import Path
 from datetime import timedelta
 from corsheaders.defaults import default_headers
 import cloudinary
+import dj_database_url
 import cloudinary.uploader
 
 
@@ -43,7 +44,7 @@ SECRET_KEY = 'django-insecure-qz=&sh2o(fv22+e9vn(y0bzbsqb1l(%7)lgi2^pl=n36b=c%ha
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 STORAGES = {
@@ -56,7 +57,8 @@ STORAGES = {
 }
 MEDIA_URL= "/media/"
 MEDIA_ROOT = BASE_DIR/"media"
-
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Application definition
 
 INSTALLED_APPS = [
@@ -85,6 +87,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Blog_Project.urls'
@@ -184,3 +187,5 @@ SIMPLE_JWT = {
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'Authorization',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
