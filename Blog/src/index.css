@@ -1,0 +1,90 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body, html{
+  height: 100%;
+}
+#root{
+
+  height:100%;
+  
+}
+#appcontainer{
+ width:100%;
+ display:flex;
+flex-direction: column;
+align-items: center;
+  
+  
+}
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#navbar{
+  display:flex;
+  width:100%;
+  padding:5px 20px;
+  background-color: black;
+  color:white;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  align-items: center;
+
+}
+
+#pfp{
+    width:50px;
+    height:50px;
+    border:2px solid black;
+    border-radius:50%;
+   
+    background-color: black;
+    object-fit: cover;
+
+}
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position:absolute;
+  color:white;
+  top: 0;
+  left: 0%;
+  font-size: 0.8rem;
+  background: #333;
+  transform: translateX(-100%);
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity:0;
+  pointer-events: none;
+}
+
+[data-tooltip]:hover::after{
+    opacity: 1;
+}
+
+.createbutton{
+    background-color:rgb(102, 159, 136) ;
+    border:none;
+    border-radius: 50%;
+    position: fixed;
+    right:30px;
+    bottom: 30px;
+    box-shadow:0px -2px 5px 2px rgb(0, 0, 0,0.3),0px 2px 5px 2px rgb(0, 0, 0,0.4);
+}
+.createbutton:hover{
+    background-color:rgb(40, 70, 58) ;
+}

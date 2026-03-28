@@ -1,0 +1,126 @@
+#logo{
+    font-size: 3rem;
+}
+#homepage{
+margin-top: 30px;
+}
+
+
+#greeting{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-left: 20px;
+}
+.text{
+    font-size: 2rem;
+    font-weight: 400;
+    margin:0 50% 20px 50%;
+}
+
+.postcardparent{
+    width:70%;
+    margin:0 auto 0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+}
+.postcard{
+  
+  background-color: aliceblue;
+  position: relative;
+  width:30%;
+  margin: 10px;
+  padding:10px;
+  border-radius: 10px;
+  display:grid;
+  grid-template-columns: auto auto;
+    
+  justify-content: space-between;
+  line-height: 1.5rem;
+  transition: width 1s, padding 1s;
+}
+.postcard:hover{
+    background-color: rgb(54, 71, 86);
+    color: white;
+    width:32%;
+}
+.title{
+    font-size: 1.5rem;
+}
+.button{
+    background-color: rgba(0,0,0,0);
+    border:none;
+    padding:10px;
+    border-radius: 50%;
+   
+}
+.button:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.button:focus{
+    background-color: rgba(0,0,0,0.7);
+}
+.deleteconfirmation{
+    position: absolute;
+    top: -50px;
+    right:-70px;
+    display: grid;
+    padding:10px;
+    column-gap: 5px;
+    border-radius: 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    background-color: rgb(17, 33, 21);
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    
+}
+
+.deleteconfirmation button{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    grid-row:2;
+    width:fit-content;
+    color: white;
+}
+
+.deleteconfirmation button:hover{
+    font-size: 1.2rem;
+    padding: 7px;
+}
+
+
+
+
+@media screen and (max-width:1300px) {
+
+.postcard{
+  width:45%
+}
+.postcard:hover{
+   width:47%;
+}
+}
+
+@media screen and (max-width:900px) {
+
+.postcard{
+  width:100%;
+}
+.postcard:hover{
+   width:100%;
+}
+}
+@media screen and (max-width:700px) {
+
+.postcard{
+  display:flex;
+  
+  flex-direction: column;
+  text-align: center;
+}
+
+}

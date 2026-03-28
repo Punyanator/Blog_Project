@@ -1,0 +1,98 @@
+.resizable-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.resizable-image-wrapper img {
+  display: block;
+  max-width: 100%;
+}
+.createpostcontainer{
+  padding-top: 20px;
+  width:100%;
+  padding-left: 20px;
+}
+
+
+.titlebar{
+  margin-right: auto;
+  width:100%;
+}
+.title{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  width:90%;
+  margin-left:10px;
+  font-size: 2rem;
+}
+.title:focus{
+  
+  outline:none;
+}
+.tiptap{
+width:100%;
+color:black;
+
+
+}
+
+.tiptap ul,.tiptap ul {
+margin-left: 1rem;
+text-indent: 0px;
+}
+.tiptap :global(.ProseMirror):focus{
+ 
+  outline:none;
+  border:none;
+}
+.tiptap :global(p.is-editor-empty::before) {
+  content: attr(data-placeholder);
+  color: #999;
+  position:absolute;
+  left:0;
+  font-style: italic;
+
+  
+}
+button{
+  background-color: white;
+}
+.buttonbar{
+width:100%;
+margin: 20px 0;
+}
+.buttonbar button:not(#postbutton), .image{
+  width:50px;
+  height:50px;
+  padding:10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border:none;
+}
+
+#postbutton{
+  border:none;
+  padding:10px;
+  border-radius: 10px;
+  background-color: rgb(102, 159, 136);
+}
+#postbutton:hover{
+  background-color: rgb(72, 114, 97);
+  height: 40px;
+  width:50px
+}
+
+.activebtn{
+  background-color: rgb(102, 159, 136) !important;
+}
+button:hover{
+   background-color: rgb(193, 190, 190) ;
+}
+.image:hover{
+ background-color: rgb(193, 190, 190);
+}
+.image:active{
+   background-color: rgb(122, 122, 122)
+}

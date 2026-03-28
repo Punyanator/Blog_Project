@@ -1,0 +1,24 @@
+#parent{
+    margin-left: 40px;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.title{
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+}
+
+span{
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.content{
+    font-size: 1rem;
+    margin-left: 15px;
+}

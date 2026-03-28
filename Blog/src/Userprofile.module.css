@@ -1,0 +1,182 @@
+
+
+#logo{
+    font-size: 3rem;
+}
+#profilepage{
+padding-top: 30px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.profilecontent{
+  
+    width:70%;
+    display:flex;
+    margin-bottom: 30px;
+    height:auto;
+}
+.profilecontent > * >*{
+ margin-bottom: 10px;
+}
+
+#pfp{
+    width:150px;
+    height:150px;
+    border:2px solid black;
+    border-radius:50%;
+    margin-right: 20px;
+    background-color: black;
+    object-fit: cover;
+
+}
+.editprofile{
+      padding:1rem ;
+    width:auto;
+    font-size: 1rem;
+    border-radius: 20px;
+    border:none;
+    background-color: rgb(102, 159, 136);
+    color: aliceblue;
+    transition: transform 1.5s;
+}
+.editprofile:hover{
+    padding: 1.2rem;
+    transform: translateY(-10px);
+    background-color:rgb(40, 70, 58) ;
+
+}
+.editprofile:focus{
+     padding: 1.2rem;
+}
+.createbutton{
+    background-color:rgb(102, 159, 136) ;
+    border:none;
+    border-radius: 50%;
+    position: absolute;
+    right:30px;
+    bottom: 30px;
+    box-shadow:0px -2px 5px 2px rgb(0, 0, 0,0.3),0px 2px 5px 2px rgb(0, 0, 0,0.4);
+}
+
+
+.text{
+    font-size: 2rem;
+    font-weight: 400;
+    
+}
+.postcardparent{
+    width:70%;
+    margin:0 auto 0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+}
+.postcard{
+  
+  background-color: aliceblue;
+  position: relative;
+  width:30%;
+  margin: 10px;
+  padding:10px;
+  border-radius: 10px;
+  display:grid;
+  grid-template-columns: auto auto;
+    
+  justify-content: space-between;
+  line-height: 1.5rem;
+  transition: width 1s, padding 1s;
+}
+.postcard:hover{
+    background-color: rgb(54, 71, 86);
+    color: white;
+    width:32%;
+}
+.title{
+    font-size: 1.5rem;
+}
+.postbutton{
+    background-color: rgba(0,0,0,0);
+    border:none;
+    padding:10px;
+    border-radius: 50%;
+   
+}
+.postbutton:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.postbutton:focus{
+    background-color: rgba(0,0,0,0.7);
+}
+.deleteconfirmation{
+    position: absolute;
+    top: -50px;
+    right:-70px;
+    display: grid;
+    padding:10px;
+    column-gap: 5px;
+    border-radius: 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    background-color: rgb(17, 33, 21);
+    justify-content: center;
+    color: white;
+}
+
+.deleteconfirmation button{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    grid-row:2;
+    width:fit-content;
+    color: white;
+}
+
+.deleteconfirmation button:focus{
+    font-size: 1.2rem;
+    padding: 7px;
+}
+
+
+
+
+@media screen and (max-width:1000px) {
+
+    #pfp{
+        margin-right: 0px;
+    }
+    .profilecontent{
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:700px) {
+
+.postcard{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+}
+}
+@media screen and (max-width:1300px) {
+
+.postcard{
+  width:45%
+}
+.postcard:hover{
+   width:47%;
+}
+}
+
+@media screen and (max-width:900px) {
+
+.postcard{
+  width:100%;
+}
+.postcard:hover{
+   width:100%;
+}
+}
