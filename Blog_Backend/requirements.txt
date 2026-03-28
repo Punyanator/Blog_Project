@@ -1,6 +1,15 @@
 Django
+djangorestframework
+django-cors-headers
+django-crispy-forms
+crispy-bootstrap5
 gunicorn
 uvicorn
 psycopg2-binary
 python-dotenv
 whitenoise
+dj-database-url
+cloudinary
+django-cloudinary-storage
+djangorestframework-simplejwt
+Pillow
