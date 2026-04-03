@@ -10,7 +10,7 @@ import axios from "axios";
 const AuthContext = createContext();
 
 export default AuthContext
-const baseURL = "http://127.0.0.1:8000/api/";
+const baseURL = "https://blog-project-7f5e.onrender.com/api/";
 export const AuthProvider = ({ children }) => {
 
     const [authTokens, setAuthTokens] = useState(() =>
