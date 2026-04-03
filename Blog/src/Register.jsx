@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "./context/AuthContext";
 import { useContext } from "react";
 function Register(){
-    const {baseURl} = useContext(AuthContext);
+    const {baseURL} = useContext(AuthContext);
     const [password,setpassword] = useState('');
     const [password_confirm,setpassword_confirm] = useState('');
     const [username,setusername] = useState('');
@@ -12,7 +12,7 @@ function Register(){
     let response;
     const handleSubmit = async (e) =>{
         e.preventDefault();
-       response  = await fetch("http://localhost:8000/api/register/",
+       response  = await fetch(`${baseURL}register/`,
             {
       method: "POST",
       headers: {

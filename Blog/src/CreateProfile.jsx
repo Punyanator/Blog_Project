@@ -9,7 +9,7 @@ import AuthContext from "./context/AuthContext";
 import { useContext } from "react";
 
 function CreateProfile({user,setUser}){
-    const {baseURl} = useContext(AuthContext);
+    const {baseURL} = useContext(AuthContext);
     const navigate = useNavigate();
     const api = useAxios();
     const [loading, setloading] =useState(true);
@@ -52,7 +52,7 @@ setchangeselect(false);
     if(bio) formData.append("bio",bio);
     if (file) formData.append("pfp", file, "pfp.jpg");
     let response
-    try{ response  = await fetch(`${baseURl}profile/create/${name.id}/`,
+    try{ response  = await fetch(`${baseURL}profile/create/${name.id}/`,
             {
       method: "POST",
       body: formData,

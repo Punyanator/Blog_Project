@@ -7,7 +7,7 @@ import useAxios from "./utils/useAxios";
 import { useContext } from "react";
 import AuthContext from "./context/AuthContext";
 function Home({user,deleteTarget, setTarget}){
-    const {baseURl} = useContext(AuthContext);
+    const {baseURL} = useContext(AuthContext);
     const api = useAxios();
     const [data, setData] = useState([]);
     const [loading,setloading] = useState(true);// loading varibale in case fetch is delayed 
@@ -36,7 +36,7 @@ function Home({user,deleteTarget, setTarget}){
     /*fecth post statement*/ 
     useEffect(
         ()=>{ 
-          try{fetch(`${baseURl}posts/`)
+          try{fetch(`${baseURL}posts/`)
       .then((res) => res.json())
       .then((data) => setData(data));
         setloading(false);}

@@ -5,14 +5,14 @@ import AuthContext from "./context/AuthContext";
 import { useContext } from "react";
 
 function Login({setlogstatus, setAuthTokens}){
-    const {baseURl} = useContext(AuthContext);
+    const {baseURL} = useContext(AuthContext);
     const [password,setpassword] = useState('');
     const [username,setusername] = useState('');
     const navigate = useNavigate();
     let response;
     const handleSubmit = async (e) =>{
         e.preventDefault();
-      try{ response  = await fetch(`${baseURl}login/`,
+      try{ response  = await fetch(`${baseURL}login/`,
             {
       method: "POST",
       headers: {
