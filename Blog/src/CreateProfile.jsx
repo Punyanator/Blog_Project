@@ -5,10 +5,13 @@ import Cropper from 'react-easy-crop';
 import { getCroppedImg } from "/src/context/CropImage.js";
 import useAxios from "./utils/useAxios";
 import { useLocation, useNavigate } from "react-router-dom";
+import AuthContext from "./context/AuthContext";
+import { useContext } from "react";
 
 function CreateProfile({user,setUser}){
-  const navigate = useNavigate();
-  const api = useAxios();
+    const {baseURl} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const api = useAxios();
     const [loading, setloading] =useState(true);
     const [full_name, setName] = useState('');
     const [file,setfile]= useState(null);
@@ -49,7 +52,7 @@ setchangeselect(false);
     if(bio) formData.append("bio",bio);
     if (file) formData.append("pfp", file, "pfp.jpg");
     let response
-    try{ response  = await fetch(`http://localhost:8000/api/profile/create/${name.id}/`,
+    try{ response  = await fetch(`${baseURl}profile/create/${name.id}/`,
             {
       method: "POST",
       body: formData,

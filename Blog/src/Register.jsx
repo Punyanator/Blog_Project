@@ -1,7 +1,10 @@
 import { useState } from "react"
 import styles from './Register.module.css'
 import { useNavigate } from "react-router-dom";
+import AuthContext from "./context/AuthContext";
+import { useContext } from "react";
 function Register(){
+    const {baseURl} = useContext(AuthContext);
     const [password,setpassword] = useState('');
     const [password_confirm,setpassword_confirm] = useState('');
     const [username,setusername] = useState('');

@@ -10,9 +10,9 @@ import axios from "axios";
 const AuthContext = createContext();
 
 export default AuthContext
-const baseURL = "https://blog-project-7f5e.onrender.com/api/";
-export const AuthProvider = ({ children }) => {
 
+export const AuthProvider = ({ children }) => {
+    const baseURL = "https://blog-project-7f5e.onrender.com/api/";
     const [authTokens, setAuthTokens] = useState(() =>
         localStorage.getItem("authTokens")
             ? JSON.parse(localStorage.getItem("authTokens"))
@@ -161,6 +161,7 @@ const UserFetch = async () =>{
         setUser,
         authTokens,
         setAuthTokens,
+        baseURL
     }
 
     useEffect( () =>  {

@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from './Login.module.css'
+import AuthContext from "./context/AuthContext";
+import { useContext } from "react";
 
 function Login({setlogstatus, setAuthTokens}){
+    const {baseURl} = useContext(AuthContext);
     const [password,setpassword] = useState('');
     const [username,setusername] = useState('');
     const navigate = useNavigate();
     let response;
     const handleSubmit = async (e) =>{
         e.preventDefault();
-      try{ response  = await fetch("http://localhost:8000/api/login/",
+      try{ response  = await fetch(`${baseURl}login/`,
             {
       method: "POST",
       headers: {

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import styles from './HomePage.module.css';
-
 import editimage from '/src/assets/edit-3-svgrepo-com.svg'
 import deleteimage from '/src/assets/trash-svgrepo-com.svg'
 import useAxios from "./utils/useAxios";
+import { useContext } from "react";
+import AuthContext from "./context/AuthContext";
 function Home({user,deleteTarget, setTarget}){
+    const {baseURl} = useContext(AuthContext);
     const api = useAxios();
     const [data, setData] = useState([]);
     const [loading,setloading] = useState(true);// loading varibale in case fetch is delayed 
@@ -34,7 +36,7 @@ function Home({user,deleteTarget, setTarget}){
     /*fecth post statement*/ 
     useEffect(
         ()=>{ 
-          try{fetch("http://127.0.0.1:8000/api/posts/")
+          try{fetch(`${baseURl}posts/`)
       .then((res) => res.json())
       .then((data) => setData(data));
         setloading(false);}
