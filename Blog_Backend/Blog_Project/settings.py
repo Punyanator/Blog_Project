@@ -172,7 +172,8 @@ REST_FRAMEWORK = {
 }
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://blog-project-nine-dun.vercel.app",  # React dev server
+    "https://blog-project-nine-dun.vercel.app",
+    "https://blog-project-git-render-url-punyanators-projects.vercel.app"  # React dev server
 ]
 
 
