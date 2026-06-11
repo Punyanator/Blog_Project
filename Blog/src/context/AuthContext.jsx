@@ -6,16 +6,14 @@ import dayjs from "dayjs";
 
 import axios from "axios";
 
-const baseURL = "https://blog-project-7f5e.onrender.com/api/";
+
 const AuthContext = createContext();
-
-
 export default AuthContext
 
 
 
 export const AuthProvider = ({ children }) => {
-    
+    const baseURL = "https://blog-project-7f5e.onrender.com/api/";
     const [authTokens, setAuthTokens] = useState(() =>
         localStorage.getItem("authTokens")
             ? JSON.parse(localStorage.getItem("authTokens"))
