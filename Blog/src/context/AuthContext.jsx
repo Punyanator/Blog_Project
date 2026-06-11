@@ -9,8 +9,20 @@ import axios from "axios";
 const baseURL = "https://blog-project-7f5e.onrender.com/api/";
 const AuthContext = createContext();
 
+
 export default AuthContext
-const axiosInstance = axios.create({
+
+
+
+export const AuthProvider = ({ children }) => {
+    
+    const [authTokens, setAuthTokens] = useState(() =>
+        localStorage.getItem("authTokens")
+            ? JSON.parse(localStorage.getItem("authTokens"))
+            : null
+    );
+    
+    const axiosInstance = axios.create({
     baseURL,
     headers: { Authorization: `Bearer ${authTokens?.access}` }
   });
@@ -32,14 +44,6 @@ const axiosInstance = axios.create({
     return req;
   });
 
-
-export const AuthProvider = ({ children }) => {
-    
-    const [authTokens, setAuthTokens] = useState(() =>
-        localStorage.getItem("authTokens")
-            ? JSON.parse(localStorage.getItem("authTokens"))
-            : null
-    );
 
 const UserFetch = async () =>{
     
