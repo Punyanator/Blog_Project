@@ -10,14 +10,6 @@ import axios from "axios";
 const AuthContext = createContext();
 
 export default AuthContext
-
-export const AuthProvider = ({ children }) => {
-    const baseURL = "https://blog-project-7f5e.onrender.com/api/";
-    const [authTokens, setAuthTokens] = useState(() =>
-        localStorage.getItem("authTokens")
-            ? JSON.parse(localStorage.getItem("authTokens"))
-            : null
-    );
 const axiosInstance = axios.create({
     baseURL,
     headers: { Authorization: `Bearer ${authTokens?.access}` }
@@ -34,12 +26,21 @@ const axiosInstance = axios.create({
     });
     localStorage.setItem("authTokens", JSON.stringify({"access":response.data.access,"refresh":authTokens.refresh}));
 
-    setAuthTokens(response.data);
+    setAuthTokens({"access":response.data.access,"refresh":authTokens.refresh});
 
     req.headers.Authorization = `Bearer ${response.data.access}`;
     return req;
   });
-  
+
+
+export const AuthProvider = ({ children }) => {
+    const baseURL = "https://blog-project-7f5e.onrender.com/api/";
+    const [authTokens, setAuthTokens] = useState(() =>
+        localStorage.getItem("authTokens")
+            ? JSON.parse(localStorage.getItem("authTokens"))
+            : null
+    );
+
 const UserFetch = async () =>{
     
         try{
