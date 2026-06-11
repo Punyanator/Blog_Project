@@ -176,7 +176,7 @@ const UserFetch = async () =>{
             setLoading(false)
         }
         
-    }, [authTokens, loading])
+    }, [authTokens])
 
     return (
         <AuthContext.Provider value={contextData}>
