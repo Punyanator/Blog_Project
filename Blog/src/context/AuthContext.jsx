@@ -8,6 +8,7 @@ import axios from "axios";
 
 
 const AuthContext = createContext();
+
 export default AuthContext
 
 
@@ -19,8 +20,7 @@ export const AuthProvider = ({ children }) => {
             ? JSON.parse(localStorage.getItem("authTokens"))
             : null
     );
-    
-    const axiosInstance = axios.create({
+const axiosInstance = axios.create({
     baseURL,
     headers: { Authorization: `Bearer ${authTokens?.access}` }
   });
@@ -41,8 +41,7 @@ export const AuthProvider = ({ children }) => {
     req.headers.Authorization = `Bearer ${response.data.access}`;
     return req;
   });
-
-
+  
 const UserFetch = async () =>{
     
         try{
